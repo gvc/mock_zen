@@ -22,7 +22,14 @@ class MockTest < Test::Unit::TestCase
       stub = Mock::Stub(method_call: true)
       assert stub.method_call
     end
+    
+    should "respond to an added behaviour" do
+      stub = Mock::Stub()
+      assert_raise Mock::UndefinedActionError do 
+        stub.method_call
+      end
+      stub.add_behaviour(method_call: true)
+      assert stub.method_call
+    end
   end
-  
-  
 end

@@ -4,13 +4,12 @@ require_relative 'mock/undefined_action_error'
 module Mock
   
   # Creates a stub with the given actions
-  # The hash of actions
   def Mock::Stub(actions={})
     Stub.new(parse_actions(actions))
   end
-  
-  
-private  
+
+protected
+  # Ensures that the actions have Symbol or String keys
   def Mock::parse_actions(actions)
     actions.reject! do |key, value| 
       !key.instance_of?(String) and !key.instance_of?(Symbol)
