@@ -1,8 +1,6 @@
 module Mock
   
   class Mock::Stub
-    alias :<< :add_behaviour
-  
     # Creates the stub with the actions passed. The stub will respond to the keys in 
     # the hash and return the corresponding values.
     #   stub = Mock::Stub(method_call: false)
@@ -23,6 +21,7 @@ private
       @actions[name]
     end
     
+    alias :<< :add_behaviour
   end
   
 end

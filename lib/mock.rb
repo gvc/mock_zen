@@ -1,3 +1,4 @@
+require_relative 'mock/spy'
 require_relative 'mock/stub'
 require_relative 'mock/undefined_action_error'
 
@@ -6,6 +7,10 @@ module Mock
   # Creates a stub with the given actions
   def Mock::Stub(actions={})
     Stub.new(parse_actions(actions))
+  end
+  
+  def Mock::Spy()
+    Spy.new
   end
 
 protected
