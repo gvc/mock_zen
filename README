@@ -1,1 +1,1 @@
-Mock zen is a lightweight mocking system for Ruby.
+Mock zen is a mocking/stubbing gem that is currently under development. I developed my own library because I thought that none of the alternatives were really 'rubyist' or idiomatic. Mock zen  is my humble attempt. 
