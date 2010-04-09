@@ -9,6 +9,7 @@ module Mock
     Stub.new(parse_actions(actions))
   end
   
+  # Creates a Spy.
   def Mock::Spy()
     Spy.new
   end
@@ -16,12 +17,8 @@ module Mock
 protected
   # Ensures that the actions have Symbol or String keys
   def Mock::parse_actions(actions)
-    actions.reject! do |key, value| 
-      !key.instance_of?(String) and !key.instance_of?(Symbol)
-    end
-    
     actions.each do |key, value|
-      if key.instance_of? String
+      if key.respond_to?(:to_sym)
         actions.delete key
         actions[key.to_sym] = value
       end

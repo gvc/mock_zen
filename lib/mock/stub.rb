@@ -11,10 +11,11 @@ module Mock
     end
   
     # Record a new behaviour to the stub as an alternative to passing all behaviours
-    # on the constructor.
-    def add_behaviour(options)
-      options = Mock::parse_actions(options)
-      @actions.merge! options
+    # on the constructor. 
+    # <br />
+    # Aliased as <code><<</code>
+    def add_behaviour(actions)
+      @actions.merge!(Mock::parse_actions(actions))
       self
     end
 
