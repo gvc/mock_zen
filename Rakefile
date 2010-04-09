@@ -2,7 +2,7 @@ desc "Erases the doc folder and recreates the RDoc"
 task :doc do
   doc_dir = File.join(File.dirname(__FILE__), "doc")
   FileUtils.rm_r(doc_dir) if File.exists?(doc_dir)
-  `rdoc`
+  `rdoc -x test`
 end
 
 desc "Runs all tests"
