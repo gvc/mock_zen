@@ -1,2 +1,2 @@
-require 'shoulda'
-require_relative '../lib/mock'
+require 'test/unit'
+require 'mock_zen'
