@@ -1,22 +1,22 @@
-require_relative 'mock/spy'
-require_relative 'mock/stub'
-require_relative 'mock/undefined_action_error'
+require_relative 'mock_zen/spy'
+require_relative 'mock_zen/stub'
+require_relative 'mock_zen/undefined_action_error'
 
-module Mock
+module MockZen
   
   # Creates a stub with the given actions
-  def Mock::Stub(actions={})
+  def MockZen::Stub(actions={})
     Stub.new(parse_actions(actions))
   end
   
   # Creates a Spy.
-  def Mock::Spy()
+  def MockZen::Spy()
     Spy.new
   end
 
 protected
   # Ensures that the actions have Symbol or String keys
-  def Mock::parse_actions(actions)
+  def MockZen::parse_actions(actions)
     actions.each do |key, value|
       if key.respond_to?(:to_sym)
         actions.delete key

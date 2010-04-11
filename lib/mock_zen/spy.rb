@@ -1,7 +1,7 @@
-module Mock
+module MockZen
   
   # A Spy is a class that records every method call for further verification.
-  class Mock::Spy
+  class MockZen::Spy
     
     # Creates the spy that will record any method calls on it.
     #   spy = Spy.new
