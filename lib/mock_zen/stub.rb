@@ -21,7 +21,9 @@ module MockZen
 
 private
     def method_missing(name, *args, &block)
-      raise MockZen::UndefinedActionError, "Undefined action #{name}" unless @actions[name]
+      unless @actions.key? name
+        raise MockZen::UndefinedActionError, "Undefined action #{name}"
+      end
       @actions[name]
     end
     
