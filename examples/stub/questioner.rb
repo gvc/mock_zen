@@ -14,7 +14,6 @@ class Questioner
       false
     else
       @output.puts "I don't understand"
-      ask question
     end
   end
 end
